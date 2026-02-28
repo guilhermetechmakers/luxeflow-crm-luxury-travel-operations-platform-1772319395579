@@ -1,0 +1,8 @@
+export { HeroSection } from './hero-section'
+export { FeatureHighlights } from './feature-highlights'
+export { IntegrationsStrip } from './integrations-strip'
+export { PricingTeaser } from './pricing-teaser'
+export { TestimonialsCarousel } from './testimonials-carousel'
+export { LogosCarousel } from './logos-carousel'
+export { FooterLinks } from './footer-links'
+export { LandingNav } from './landing-nav'

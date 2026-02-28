@@ -52,8 +52,14 @@ export default {
       },
       animation: {
         'fade-in': 'fadeIn 0.3s ease-out',
-        'fade-in-up': 'fadeInUp 0.3s ease-out',
+        'fade-in-up': 'fadeInUp 0.5s ease-out',
         'slide-in': 'slideIn 0.3s ease-out',
+      },
+      animationDelay: {
+        '100': '100ms',
+        '200': '200ms',
+        '300': '300ms',
+        '400': '400ms',
       },
       keyframes: {
         fadeIn: {
@@ -72,6 +78,11 @@ export default {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
         },
+      },
+      animationDelay: {
+        '100': '100ms',
+        '200': '200ms',
+        '300': '300ms',
       },
       transitionDuration: {
         '200': '200ms',

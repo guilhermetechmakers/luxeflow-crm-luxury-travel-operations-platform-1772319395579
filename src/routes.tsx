@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import { DashboardLayout } from '@/components/layout/dashboard-layout'
 import { SidebarProvider } from '@/contexts/sidebar-context'
 import { LandingPage } from '@/pages/landing'
+import { DemoPage } from '@/pages/demo'
 import { LoginPage } from '@/pages/login'
 import { SignupPage } from '@/pages/signup'
 import { ForgotPasswordPage } from '@/pages/forgot-password'
@@ -36,6 +37,7 @@ const DashboardWrapper = () => (
 
 export const router = createBrowserRouter([
   { path: '/', element: <LandingPage /> },
+  { path: '/demo', element: <DemoPage /> },
   { path: '/login', element: <LoginPage /> },
   { path: '/signup', element: <SignupPage /> },
   { path: '/forgot-password', element: <ForgotPasswordPage /> },
