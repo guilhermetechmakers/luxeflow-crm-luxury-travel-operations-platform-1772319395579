@@ -1,68 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LuxeFlow Design System - CSS Custom Properties */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Primary: White background/cards */
+  --primary: 255 255 255;
+  --primary-foreground: 34 34 34;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Accent: Olive green #8A9A5B - action buttons/highlights */
+  --accent: 138 154 91;
+  --accent-foreground: 255 255 255;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  /* Supporting: Gold #C6AB62 - decorative */
+  --supporting: 198 171 98;
+  --supporting-foreground: 34 34 34;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+  /* Neutrals */
+  --background: 246 246 246;
+  --foreground: 34 34 34;
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  /* Card */
+  --card: 255 255 255;
+  --card-foreground: 34 34 34;
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  /* Secondary text */
+  --secondary: 136 136 136;
+  --secondary-foreground: 34 34 34;
+
+  /* Muted */
+  --muted: 238 238 238;
+  --muted-foreground: 136 136 136;
+
+  /* Border & Input */
+  --border: 238 238 238;
+  --input: 238 238 238;
+  --ring: 138 154 91;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  html {
+    @apply antialiased;
   }
-  a:hover {
-    color: #747bff;
+  body {
+    @apply bg-background text-foreground font-sans min-h-screen;
   }
-  button {
-    background-color: #f9f9f9;
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: fadeInUp 0.3s ease-out;
+  }
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgb(var(--muted)) 0%,
+      rgb(var(--muted-foreground) / 0.1) 50%,
+      rgb(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
   }
 }
